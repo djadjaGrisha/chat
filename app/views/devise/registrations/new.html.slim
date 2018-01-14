@@ -1,0 +1,31 @@
+.section
+  .container
+    .columns
+      .column.is-half.is-offset-one-quarter.has-text-centered
+        .box
+          h2.title Sign up
+
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = devise_error_messages!
+            .field
+              = f.label :email
+              .control
+                = f.email_field :email, autofocus: true, class: 'input'
+
+            .field
+              = f.label :password
+              .control
+                = f.password_field :password, autocomplete: 'off', class: 'input'
+              - if @minimum_password_length
+                p.help = "(#{@minimum_password_length} characters minimum)"
+
+            .field
+              = f.label :password_confirmation
+              .control
+                = f.password_field :password_confirmation, autocomplete: 'off', class: 'input'
+
+            .actions
+              = f.submit 'Sing up', class: 'button'
+
+            .field
+            = render 'devise/shared/links'
