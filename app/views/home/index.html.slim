@@ -1,0 +1,12 @@
+.section
+  .container
+    h1.title Welcome to Chat App
+    - if current_user
+      p To start chatting choose conversation or create a new one
+    - else
+      p
+        | To continue
+        = link_to ' log in ', new_user_session_path
+        | or
+        = link_to ' sign up', new_user_registration_path
+        |, please

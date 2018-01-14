@@ -1,0 +1,10 @@
+.navbar
+  .navbar-brand
+    = link_to root_path, class: 'navbar-item' do
+      = image_tag 'logo_placeholder.png'
+    button.button.navbar-burger
+      span
+      span
+      span
+  .navbar-menu
+    = link_to 'Conversations', conversations_path, class: 'navbar-item'

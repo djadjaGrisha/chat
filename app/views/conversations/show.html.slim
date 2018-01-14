@@ -1,0 +1,14 @@
+.section
+  .container
+    h1.title Conversations - #{@conversation.topic}
+.section
+  .container
+    .panel
+      .panel-body#messages data-conversation-id= @conversation.id
+        = render @conversation.messages
+    .panel
+      = form_for @message, url: '#' do |f|
+        .field
+          .control
+            = f.text_area :body, class: 'textarea is-info', placeholder: 'Your message'
+            = f.submit 'Post', class: 'button is-info'

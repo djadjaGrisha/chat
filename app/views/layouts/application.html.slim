@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title
+      | Chat
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .container
+      = render 'layouts/navbar'
+    = yield

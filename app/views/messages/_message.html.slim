@@ -1,0 +1,6 @@
+article.message.is-info
+  .message-header
+    p = "#{message.user.name} - #{message.send_at}"
+    /<button class="delete" aria-label="delete"></button>
+  .message-body
+    = message.body

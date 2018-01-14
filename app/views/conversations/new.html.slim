@@ -1,0 +1,15 @@
+.section
+  .container
+    h1.title.has-text-centered Add conversations
+.section
+  .container
+    = form_for @conversation do |f|
+      .field.is-horizontal
+        .field-label.is-normal
+          = f.label :topic, class: 'label'
+        .field-body
+          .field.has-addons
+            .control
+              = f.text_field :topic, class: 'input is-primary'
+            .control
+              = f.submit 'Add', class: 'button is-primary'

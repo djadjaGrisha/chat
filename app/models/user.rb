@@ -1,0 +1,14 @@
+class User < ApplicationRecord
+  # acts_as_paranoid
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :conversations, dependent: :destroy
+  has_many :messages, dependent: :destroy
+
+  def name
+    email.split('@').first
+  end
+end
