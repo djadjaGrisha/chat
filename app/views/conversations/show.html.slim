@@ -1,14 +1,19 @@
 .section
   .container
-    h1.title Conversations - #{@conversation.topic}
+    h1.title = @conversation.topic
 .section
   .container
-    .panel
-      .panel-body#messages data-conversation-id= @conversation.id
-        = render @conversation.messages
-    .panel
-      = form_for @message, url: '#' do |f|
-        .field
-          .control
-            = f.text_area :body, class: 'textarea is-info', placeholder: 'Your message'
-            = f.submit 'Post', class: 'button is-info'
+    .columns
+      .column
+        .panel
+          .panel-body#messages data-conversation-id= @conversation.id
+            = render @conversation.messages
+      .column.is-one-third
+        .panel
+          = form_for @message, url: '#' do |f|
+            .field
+              .control
+                = f.text_area :body, class: 'textarea is-info', placeholder: 'Your message'
+            .field
+              .control
+                = f.submit 'Post', class: 'button is-info'

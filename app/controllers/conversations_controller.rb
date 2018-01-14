@@ -11,7 +11,6 @@ class ConversationsController < ApplicationController
 
   def new
     @conversation = Conversation.new
-    # @message = Message.new
   end
 
   def create
@@ -25,6 +24,7 @@ class ConversationsController < ApplicationController
   end
 
   def destroy
+    @conversation.destroy
     redirect_to conversations_path
   end
 

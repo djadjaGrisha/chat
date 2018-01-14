@@ -2,7 +2,11 @@
   .container
     h1.title Welcome to Chat App
     - if current_user
-      p To start chatting choose conversation or create a new one
+      p
+        | To start chatting choose
+        = link_to ' conversation ', conversations_path
+        | or create a
+        = link_to ' new one', new_conversation_path
     - else
       p
         | To continue

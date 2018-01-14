@@ -7,4 +7,12 @@
       span
       span
   .navbar-menu
-    = link_to 'Conversations', conversations_path, class: 'navbar-item'
+    .navbar-start
+      = link_to 'Conversations', conversations_path, class: 'navbar-item'
+    .navbar-end
+      - if current_user
+        = link_to destroy_user_session_path, method: :delete, class: 'navbar-item' do
+          = fa_icon('sign-out')
+      -else
+        = link_to new_user_session_path, class: 'navbar-item' do
+          = fa_icon('sign-in')
