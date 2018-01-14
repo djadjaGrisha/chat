@@ -16,6 +16,7 @@ class ConversationsController < ApplicationController
   def create
     @conversation = current_user.conversations.build(conversation_params)
     if @conversation.save
+      # TODO: show notification
       flash[:success] = 'Conversation added!'
       redirect_to conversations_path
     else
@@ -24,6 +25,8 @@ class ConversationsController < ApplicationController
   end
 
   def destroy
+    # TODO: add link to destroy conversation
+    # TODO: add policy to manage rights
     @conversation.destroy
     redirect_to conversations_path
   end

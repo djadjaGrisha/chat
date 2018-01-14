@@ -9,6 +9,7 @@ class MessageBroadcastJob < ApplicationJob
   private
 
   def render_message(message)
+    # TODO: pass user ID for identify own messages
     MessagesController.render partial: 'messages/message', locals: { message: message }
   end
 end
